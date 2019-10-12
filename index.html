@@ -1,31 +1,54 @@
 <html>
+
 <head>
   <title>mows</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <h1>MQTT</h1>
   <p>My MQTT Web App</p>
-  Broker: <input id="broker" value="wss://test.mosquitto.org:8081/mqtt">
-  <!-- Broker: <input id="broker" value="ws://broker.hivemq.com:8000/mqtt"> -->
+  <table>
+    <tr>
+      <th>Broker</th>
+      <th>Publish</th>
+      <th>Subscribe</th>
+    </tr>
+    <tr>
+      <form>
+        <th><input id="broker" value="wss://test.mosquitto.org:8081/mqtt"></th>
+        <!-- Broker: <input id="broker" value="ws://broker.hivemq.com:8000/mqtt"> -->
+        <th><input id="pub-topic" placeholder="Topic"></th>
+        <th><input id="sub-topic" placeholder="Topic"></th>
+      </form>
+    </tr>
+    <tr>
+      <form>
+        <th></th>
+        <th><input id="pub-payload" placeholder="Payload"></th>
+        <th></th>
+      </form>
+    </tr>
+    <tr>
+      <th><button id="connect" onclick="connectFunc()">Connect</button></th>
+      <th><button id="publish" onclick="publishFunc()">Publish</button></th>
+      <th><button id="subscribe" onclick="subscribeFunc()">Subscribe</button></th>
+    </tr>
+    <tr>
+      <th><button id="disconnect" onclick="disconnectFunc()">Disconnect</button></th>
+      <th></th>
+      <th><button id="unsubscribe" onclick="unsubscribeFunc()">Unsubscribe</button></th>
+    </tr>
+  </table>
   <br>
-  <button id="connect" onclick="connectFunc()">Connect</button>
-  <br>
-  <br>
-  Topic: <input id="pub-topic" value="cloud">
-  <br>
-  Payload: <input id="pub-payload" value="strife">
-  <br>
-  <button id="publish" onclick="publishFunc()">Publish</button>
-  <br>
-  <br>
-  Topic: <input id="sub-topic" value="cloud">
-  <br>
-  <button id="subscribe" onclick="subscribeFunc()">Subscribe</button>
-  <div>
-    <ul id="messages"></ul>
-  </div>
+  <center>
+    <h2>Status</h2>
+    <div>
+      <ul id="messages"></ul>
+    </div>
+  </center>
 </body>
 <script src="scripts/browser-mqtt.js"></script>
 <script src="scripts/controller.js"></script>
+
 </html>

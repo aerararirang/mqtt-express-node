@@ -18,8 +18,16 @@ function connectFunc(){
     displayMessage("Received { topic: " + topic + "; payload: " + payload + " }");
     // client.end();
   })
-
 }
+
+// function disconnectFunc(){
+//   // console.log("subscribe");
+//   // client.subscribe("mqtt/demo");
+//   // client = mqtt.connect(document.getElementById('broker').value)
+//   // console.log("Subscribe { topic: " + document.getElementById('sub-topic').value + " }");
+//   displayMessage(document.getElementById('broker').value + " has been disconnected.")
+// }
+
 function publishFunc(){
   // console.log("publish");
   // client.publish("mqtt/demo", "hello world!");
@@ -30,6 +38,16 @@ function publishFunc(){
   // console.log(document.getElementById('pub-payload').value);
 }
 
+// function unpublishFunc(){
+//   // console.log("publish");
+//   // client.publish("mqtt/demo", "hello world!");
+//   client.unpublish(document.getElementById('pub-topic').value, document.getElementById('pub-payload').value)
+//   // console.log("Published { topic: " + document.getElementById('pub-topic').value + "; payload: " + document.getElementById('pub-payload').value + " }");
+//   displayMessage("Unpublished { topic: " + document.getElementById('pub-topic').value + " }");
+//   // console.log(document.getElementById('pub-topic').value);
+//   // console.log(document.getElementById('pub-payload').value);
+// }
+
 function subscribeFunc(){
   // console.log("subscribe");
   // client.subscribe("mqtt/demo");
@@ -38,35 +56,17 @@ function subscribeFunc(){
   displayMessage("Subscribe { topic: " + document.getElementById('sub-topic').value + " }")
 }
 
+// function unsubscribeFunc(){
+//   // console.log("subscribe");
+//   // client.subscribe("mqtt/demo");
+//   client.unsubscribe(document.getElementById('sub-topic').value);
+//   // console.log("Subscribe { topic: " + document.getElementById('sub-topic').value + " }");
+//   displayMessage("Unsubscribe { topic: " + document.getElementById('sub-topic').value + " }");
+// }
+
 function displayMessage(message) {
   var node = document.createElement("li");
   var textnode = document.createTextNode(message);
   node.appendChild(textnode);
   document.getElementById("messages").appendChild(node);
 }
-// // advance functionalities
-// client = mqtt.connect("ws://broker.hivemq.com:8000/mqtt")
-// client.subscribe("mqtt/demo", function (err){
-//   if (err){
-//     console.log(err);
-//   } else {
-//     console.log("subscribed")
-//   }
-// })
-
-// client.on("connect", function(){
-//     console.log("Successfully connected");
-// })
-
-// client.on("message", function (topic, payload) {
-//   console.log([topic, payload].join(": "));
-//   client.end();
-// })
-
-// client.publish("mqtt/demo", "hello world!", function(err){
-//   if (err){
-//     console.log(err)
-//   } else {
-//     console.log("published")
-//   }
-// })

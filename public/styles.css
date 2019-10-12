@@ -1,9 +1,9 @@
 div {
-    height:360px;
-    width:240px;
-    border:1px solid #ccc;
-    font:10px/13px Georgia, Garamond, Serif;
-    overflow:auto;
+    height: 360px;
+    width: 240px;
+    border: 1px solid #000;
+    font: 10px Georgia, Garamond, Serif;
+    overflow: auto;
     display: flex;
     /* flex-direction: column-reverse;   */
 }
@@ -11,4 +11,9 @@ div {
 ul {
     list-style-type:none;
     padding: 0px 0px 0px 5px;
+}
+
+body {
+    text-align: center;
+    background: linear-gradient(rgb(91, 143, 248), #FF66FF);
 }
